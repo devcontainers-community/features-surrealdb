@@ -18,5 +18,5 @@ EOF
 rsync -av --exclude .git "$feature_dir/" "$PWD/.devcontainer/feature/"
 tree -a
 container_id=$(devcontainer up --workspace-folder . | jq -r .containerId)
-devcontainer exec --workspace-folder . surreal --version
+devcontainer exec --workspace-folder . surreal --help
 docker kill "$container_id"
